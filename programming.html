@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- CORES - Em head é possível alterar a cor de fundo com CSS, utilizando a tag Style. Exemplo: -->
+
+<style>
+    body {
+        background-image: url("fundo.jpg");
+        background-color: darkblue;
+        color: whitesmoke;(este serve para a cor das letras)
+         }
+    </style>
+    
+    COMMENTS: é possível selecionar o codigo hexadecimal #XXXXXX. (Verificar no GIMP)
+    COMMENT: É possível selecionar uma imagem como background, deixo a imagem na mesma pasta do index.html e coloca-se esta dentro de style background-image: url("fundo.jpg");
+    COMMENTS : Há tres formas de representar cores: O sistema hexadecimal #000000; o rgb(0,0,0) e o rgba(0,0,0,0)(o ultimo 0 no rgba é o nivel de transparencia, indo de 0 até 1, podendo ser 0,2; 0,3, etc); Ainda há maneiras de representar cores usando os conceitos de matiz, saturação e luminosidade.
+    
+    IMAGENS
+    OBS.: Nos icones e logos o ideal é utilizar imagens no formato png. Nas fotos utilize jpg mesmo. 
+    Como diminuir uma foto: <img src="imagem.jpg"/>. OBS.: Lembrar de diminuir o tamanho no GIMP para diminuir o tamanho do arquivo. 
+    Quando for colocar imagens, sempre as coloque na mesma pagina do index.html ou em subpastas na pasta na qual o index está localizado. <img src="pasta/imagem.jpg"/>. Sempre lembrar de nomear as pastas com _ no começo.
+    
+    FAZENDO UMA FOLHA DE ESTILO
+    Primeiramente
+    "
+    @charset "UTF-8"; 
+    body { 
+        background-color: white; 
+        color: rgba(0,0,0,1); 
+         }
+    
+    p {
+        tex-align: justify;
+        text-indent: 50px; 
+      }"
+    
+    Dentro de HEAD  ao invés de style, colocamos a tag abaixo:
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    
+    É possível definir uma classe para as imagens no arquivo HTML, antes de inserir o estilo no arquivo autonomo do CSS, deste modo:
+    <figure class="foto-legenda"/>
+    
+    Já no arquivo de estilo, nós colocaremos a seguinte configuração da imagem:
+    
+    Embaixo da configuração de estilo do texto: 
+    figure.foto-legenda {
+        position: relative;
+        border: 8px solid white;
+        box-shadow: 1px 1px 4px black;
+    
+    }
+    
+    figure.foto-legenda img{ 
+        width: 100%;
+        height: 100%;
+    }	
+    
+    figure.foto-legenda figcaption {
+        position: absolute; 
+        top: 0px;
+        background-color: rgba(0,0,0,.4);
+        color: white;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    
+    figure.foto-legenda:hover figcaption {
+        opacity: 1;
+    }
+    
+    Nesse caso, quando no index colocarmos a imagem entre a tag figure e também inserirmos um figcaption, quando colocarmos no inicio da tag figure o atributo class="foto-legenda" todas as configurações de estilo que estão no arquivo css serão aplicadas. 
+    
+    
+    Podemos transformar qualquer palavra ou frase em um link. Para isto basta utilizarmos a tag <a> (anchor) e dentro dela o href. Exemplo: 
+    <a href="http://www.google.com.br" target="_blank"> a palavra que será transformada em um link </a>
+    
+    /* FORMATAÇÃO DE MENU NO CSS
+     
+    nav#menu {
+        display: block;
+    }
+    
+    nav#menu ul {
+        list-style: none;
+        text-transform: uppercase;
+        position: absolute;
+        top: -20px;
+        left: 200px;
+    
+    }
+    
+    nav#menu li {
+        display: inline-block;
+        background-color: #dddddd;
+        padding: 10px;
+        margin: 2px;
+        transition: background-color 1s;
+    
+    }
+    
+    nav#menu h1 {
+        display: none;
+    }
+    
+    nav#menu li:hover {
+        background-color: #606060;
+    }
+    
+    nav#menu a {
+        color: #000000;
+        text-decoration: none;
+    }
+    
+    nav#menu a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+    */
+    
+    
+    
+    /* FORMATAÇÃO DA DIV INTERFACE - que fica dentro do body, embaixo do header
+    
+    div#interface {
+        width: 900px;
+        background-color: #ffffff;
+        margin: -20px auto 10px auto;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        padding: 10px 10px 10px 10px; 
+        
+    }
+    
+    
+    */
+    
+    
+    
+    /* FORMATAÇÃO DO HEADER
+    
+    header#cabecalho img#icone {
+        position: absolute; 
+        left: 780px;
+        top: 40px;
+    
+    header#cabecalho {
+        border-bottom: 1px #606060 solid;
+        height: 150px;
+        background: url("../_imagens/exemplo.jpg") no-repeat 0px 80px;
+    }
+    
+    header#cabecalho h1 {
+        font-family: Arial, sans-serif; 
+        font-size: 30pt; 
+        color: #606060;
+        text-shadow: 1px 1px 1px rgba (0,0,0,0.6);
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+    
+    headder#cabecalho h2 {
+        font-family: Arial, sans-serif;
+        color: #888888;
+        font-size: 15pt;
+        padding: 0px;
+        margin-top: 0px;
+    }
+    */
+    
+    COMO TRABALHAR COM FONTES
+    O IDEAL É CRIAR UMA PASTA JUNTO COM A PASTA DE IMAGENS COM O SEGUINTE NOME _FONTS
+    https://fonts.google.com/
+    
+    FORMATAR A SEÇÃO
+    
+    section#corpo {
+        display: block;
+        width: 600px;
+        float: left;
+        border-right: 1px solid #606060;
+        padding-right: 15px;
+    }
+    
+    aside#lateral {
+        display: block;
+        width: 400px;
+        float: right;
+        background-color: #dddddd;
+        padding: 10px; 
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    
+    }
+    
+    footer#rodape {
+        clear: both; 
+        border-top: 1px solid #606060;
+    }
+    
+    footer#rodape p {
+        text-align: center;
+    }
+    
+    
+    
+    COMENTS - CONFIGURAR UMA TABELA
+    <table id="tabela">
+    <caption> Exemplo de tabela </caption>
+    <tr><td class="ce">uma celula</td><td class="cd">outra celula</td></tr>
+    </table>
+    
+    COMENTS - é possivel criar classes para diferenciar as colunas da direita e da esquerda
+    
+    CONFIGURANDO NO CSS A TABELA
+    tabela#tabela {
+    border: 1px solid #606060
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    tabela#tabela td{
+        border: 1px solid #606060; 
+        padding: 10px;
+        text-align: center;
+        vertical-align: midle;
+    }
+    
+    table#tabela td.ce {
+        color: #ffffff;
+        background-color: #606060;
+        vertical-align: top;
+        font-weight: bold;
+    }
+    
+    table#tabela td.cd {
+        background-color: #cecece;
+    
+    }
+    
+    table#tabela caption {
+        color: #888888;
+        font-size: 13pt;
+        font-weight: bolder;
+    } 
+    
+    Coments - os parametros colspan e rowspan somente funcionam na tag td e servem para expandir os dados para duas linhas ou colunas. 
+    Coments - Semanticamente, alem do header, footer, section e aside, também podemos ter os articles dentro das seções. 
+    <article id="artigo-principal"> </article>
+    para configurar no CSS
+    article#artigo-principal h2 {
+    font-size: 12pt; 
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0px 0px 10px;
+    
+    header#cabecalho-artigo h1 {
+        font-family: "fonte", sans-serif;
+        font-size: 20pt;
+        color: #606060;
+        margin-bottom: 0px;
+    }
+    
+    header#cabecalho-artigo h2 {
+        font-size: 13pt;
+        color: #cecece;
+        background-color: #ffffff;
+        margin: 0px;
+    }
+    
+    header#cabecalho-artigo h3 {
+        font-size: 12px;
+        color: #606060
+    }
+    
+    aside#lateral h1 {
+        font-family:
+        font-size: 
+        color:
+    
+    }
+    
+    aside#lateral h2 {
+        font-family:
+        font-size: 
+        color:
+        padding:
+    }
+    
+    
+    
+    INTRODUÇÃO A JAVASCRIPT
+    Javascript - é a evolução da linguagem Cmm(criada em 1993) 
+    
+    <script>
+        alert("Olá, Mundo!"); 
+        document.write("Olá, Mundo!");
+    
+    </script>
+    
+    <script>
+        document.write("Olá! Hoje é dia " + Date());
+    </script>
+        function acendeLampada(){
+            alert("Lampada acendeu");
+            
+    }
+    <script>
+    
+    </script>
+    
+</body>
+</html>
